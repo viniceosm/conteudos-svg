@@ -1,37 +1,117 @@
-## Welcome to GitHub Pages
+## Iniciando um SVG
 
-You can use the [editor on GitHub](https://github.com/viniceosm/conteudos-svg/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```HTML
+<svg width="100" height="100">
+</svg>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Formas SVG
 
-### Jekyll Themes
+- [Rectangle `<rect>`](#rectangle)
+- [Circle `<circle>`](#circle)
+- [Ellipse `<ellipse>`](#ellipse)
+- [Line `<line>`](#line)
+- Polyline `<polyline>`
+- Polygon `<polygon>`
+- [Path `<path>`](#path)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/viniceosm/conteudos-svg/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Rectangle
 
-### Support or Contact
+|Tag atributo|Descrição 
+|-|-
+|`width`| Define largura.
+|`height`| Define altura.
+|`x`| Define coordenada no eixo x.
+|`y`| Define coordenada no eixo y.
+|`rx`| Define um raio no eixo x. Para deixar borda arredondada
+|`ry`| Define um raio no eixo y. Para deixar borda arredondada
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Exemplo 1
+
+```HTML
+<svg width="400" height="110">
+  <rect width="300" height="100" rx="20" ry="20" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+</svg>
+```
+
+### Exemplo 2
+
+```HTML
+<svg width="400" height="110">
+  <rect width="300" height="100" x="50" y="20" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+</svg>
+```
+
+## Circle
+
+|Tag atributo|Descrição 
+|-|-
+|`cx`| Define coordenada no eixo x.
+|`cy`| Define coordenada no eixo y.
+|`r`| Define o raio do elemento.
+
+### Exemplo 1
+
+```HTML
+<svg width="400" height="110">
+  <circle cx="50" cy="50" r="50" />
+</svg>
+```
+
+## Ellipse
+
+|Tag atributo|Descrição 
+|-|-
+|`cx`| Define coordenada no eixo x.
+|`cy`| Define coordenada no eixo y.
+|`rx`| Define um raio no eixo x. Para deixar borda arredondada
+|`ry`| Define um raio no eixo y. Para deixar borda arredondada
+
+### Exemplo 1
+
+```HTML
+<svg width="400" height="110">
+  <ellipse cx="100" cy="50" rx="100" ry="50" />
+</svg>
+```
+
+## Line
+|Tag atributo|Descrição 
+|-|-
+|`x1`| Define a coordenada do eixo **x** do ponto **inicial** da linha
+|`x2`| Define a coordenada do eixo **x** do ponto **final** da linha.
+|`y1`| Define a coordenada do eixo **y** do ponto **inicial** da linha
+|`y2`| Define a coordenada do eixo **y** do ponto **final** da linha.
+
+### Exemplo 1
+
+```HTML
+<svg width="400" height="110">
+  <line x1="0" y1="80" x2="100" y2="20" stroke="black" />
+</svg>
+```
+
+## Path
+
+- M = moveto
+- L = lineto
+- H = horizontal lineto
+- V = vertical lineto
+- C = curveto
+- S = smooth curveto
+- Q = quadratic Bézier curve
+- T = smooth quadratic Bézier curveto
+- A = elliptical Arc
+- Z = closepath
+
+Nota: Todos os comandos acima também podem ser expressos com letras mais baixas. Letras maiúsculas significa absolutamente posicionadas, as letras mais baixas significam relativamente posicionadas.
+
+### Exemplo 1 (triângulo)
+
+Primeiro vértice `150,0`, 2º para `75,200`, 3º para `225,200`, `Z` fecha a forma ligando o terceiro vértice com o primeiro.
+
+```HTML
+<svg height="210" width="400">
+  <path d="M150 0 L75 200 L225 200 Z" />
+</svg>
+```
