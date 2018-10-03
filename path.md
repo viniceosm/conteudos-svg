@@ -11,7 +11,10 @@
 - A = elliptical Arc
 - Z = closepath
 
-Nota: Todos os comandos acima também podem ser expressos com letras mais baixas. Letras maiúsculas significa absolutamente posicionadas, as letras mais baixas significam relativamente posicionadas.
+Nota:
+- Todos os comandos acima também podem ser expressos com letras mais baixas.
+- Letras **maiúsculas** significa **absolutamente** posicionadas
+- Letras **minúsculas** significam **relativamente** posicionadas.
 
 ### Exemplo 1 (triângulo)
 
